@@ -3,12 +3,14 @@
 - status: Completed
 - button "Completed in {{duration}}" [disabled] [expanded]
 - button "Think The user wants me to read a.txt and b.txt, then reply with \"DONE\". Let me do both reads in parallel."
-- button "Read a.txt":
+- button "Read a.txt {{duration}}":
   - text: Read
   - button "a.txt"
-- button "Read b.txt":
+  - text: {{duration}}
+- button "Read b.txt {{duration}}":
   - text: Read
   - button "b.txt"
+  - text: {{duration}}
 - button "Think Both files have been read. a.txt contains \"alpha\" and b.txt contains \"beta\". I'll now reply with DONE as instructed."
 - paragraph: DONE
 - button "Copy"

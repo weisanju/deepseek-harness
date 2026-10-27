@@ -22,10 +22,12 @@ import type { AskQuestionCardModel } from '../models/ask-question-card-model.ts'
 import {
   formatToolBody, type ToolRowState, type ToolRowVariant,
 } from '../models/tool-call-model.ts'
+import type { ToolTiming } from '../models/tool-duration.ts'
 import type { WebCardModelProps } from '../models/web-card-model.ts'
 import { AskQuestionCard } from './AskQuestionCard.tsx'
 import { ToolDetails, type ToolDetailsModel } from './ToolDetails.tsx'
 import { ExitCodeBadge } from './ExitCodeBadge.tsx'
+import { ToolDuration, useToolDurationLabel } from './ToolDuration.tsx'
 import css from './ToolRow.module.css'
 
 export interface ToolRowProps {
@@ -81,6 +83,12 @@ export interface ToolRowProps {
   /** Read-only fields/list card derived from a successful recorded result. */
   details?: ToolDetailsModel | null | undefined
   state: ToolRowState
+  /**
+   * The call's timing: its start stamp while the call runs, the elapsed time
+   * once it settled. Present = the row shows the elapsed time at its trailing
+   * edge; absent = no duration label.
+   */
+  timing?: ToolTiming | undefined
   /**
    * Recorded file target or a supported argument fallback. With onOpenFile,
    * the summary opens that path through the owner's file-preview callback.
@@ -143,6 +151,7 @@ export const ToolRow = memo(function ToolRow({
   web,
   details,
   state,
+  timing,
   filePath,
   filePathLine,
   onOpenFile,
@@ -179,6 +188,9 @@ export const ToolRow = memo(function ToolRow({
   )
   const status = stateStatus(state, t)
   const running = state === 'running' || state === 'preparing'
+  // The label ticks only while the call is in flight; a settled call shows the
+  // duration it took, and a call without timing shows nothing.
+  const durationLabel = useToolDurationLabel(timing, t)
   const normalSummary = terminalBody?.description ?? (open ? detailsBody?.expandedSummary ?? summary : summary)
   const exitLabel = terminalExitLabel(terminal, t)
   // Generic failures retain their first result line; command exits keep their description.
@@ -253,8 +265,9 @@ export const ToolRow = memo(function ToolRow({
           <span className={css.diffAdded}>{`+${totals.added}`}</span>{' '}<span className={css.diffRemoved}>{`-${totals.removed}`}</span>
         </TextShimmer>
       )}
+      {durationLabel !== null && <ToolDuration label={durationLabel} />}
     </>
-  ), [summaryLinkKeyDown, linkHref, openFile, state, suffix, totals, summaryText, exitLabel])
+  ), [summaryLinkKeyDown, linkHref, openFile, state, suffix, totals, summaryText, exitLabel, durationLabel])
   const expandedContent = useMemo(() => open ? (
     <div className={clsx(css.bodyWrap, detailsBody !== null && css.detailsBodyWrap)}>
       {askQuestionBody !== null

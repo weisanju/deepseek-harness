@@ -1,0 +1,25 @@
+# Bilingual-pair consistency record for 2026-10-27-tool-call-elapsed-time.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/implemented/feature/2026-10-27-tool-call-elapsed-time.md
+/agent-note-tool-rows-show-the-call-s-elapsed-time:
+  en: f0dd9266f275530b
+  zh: 76bbe9aad287bc76
+/agent-note-tool-rows-show-the-call-s-elapsed-time/problem:
+  en: d5d4539e06ffc5d7
+  zh: 3791a6da93e482bf
+/agent-note-tool-rows-show-the-call-s-elapsed-time/decision:
+  en: 7fc288024ce2cf21
+  zh: 7869c53ab447da70
+/agent-note-tool-rows-show-the-call-s-elapsed-time/alternatives-considered:
+  en: 12fe994fbfa234d8
+  zh: 1716ed0ab65e6e52
+/agent-note-tool-rows-show-the-call-s-elapsed-time/consequences:
+  en: f6496b073f931746
+  zh: fb7f41943789cc32
+/agent-note-tool-rows-show-the-call-s-elapsed-time/testing:
+  en: fec25b09033cc59b
+  zh: 0691ad9dde666b9e
+/agent-note-tool-rows-show-the-call-s-elapsed-time/related:
+  en: bd9333402b388070
+  zh: f16c0af798541093

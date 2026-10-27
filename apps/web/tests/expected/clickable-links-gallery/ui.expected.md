@@ -11,43 +11,44 @@
 - status: Completed
 - button "Completed in {{duration}}" [expanded]
 - button "Wrote files, ran commands, called tools, etc." [expanded]
-- button "Write site/report.html 1KB +1 -0":
+- button "Write site/report.html 1KB +1 -0 {{duration}}":
   - text: Write
   - button "site/report.html"
-  - text: 1KB +1 -0
-- button "Write a/style.css 1KB +1 -0":
+  - text: 1KB +1 -0 {{duration}}
+- button "Write a/style.css 1KB +1 -0 {{duration}}":
   - text: Write
   - button "a/style.css"
-  - text: 1KB +1 -0
-- button "Write b/style.css 1KB +1 -0":
+  - text: 1KB +1 -0 {{duration}}
+- button "Write b/style.css 1KB +1 -0 {{duration}}":
   - text: Write
   - button "b/style.css"
-  - text: 1KB +1 -0
-- button "Write site/index.html 1KB +1 -0":
+  - text: 1KB +1 -0 {{duration}}
+- button "Write site/index.html 1KB +1 -0 {{duration}}":
   - text: Write
   - button "site/index.html"
-  - text: 1KB +1 -0
-- button "Write site/app.js 1KB +1 -0":
+  - text: 1KB +1 -0 {{duration}}
+- button "Write site/app.js 1KB +1 -0 {{duration}}":
   - text: Write
   - button "site/app.js"
-  - text: 1KB +1 -0
-- button "Edit src/tokens.css 1KB +1 -1" [expanded]:
+  - text: 1KB +1 -0 {{duration}}
+- button "Edit src/tokens.css 1KB +1 -1 {{duration}}" [expanded]:
   - text: Edit
   - button "src/tokens.css"
-  - text: 1KB +1 -1
+  - text: 1KB +1 -1 {{duration}}
 - text: css
 - button "Wrap lines"
 - button "Copy"
 - text: "src/tokens.css - --inline-code: #EBEEF2; + --inline-code: #F5F5F5;"
 - button "Inspect"
-- button "Tool call str_replace_editor · create" [expanded]
+- button "Tool call str_replace_editor · create {{duration}}" [expanded]
 - text: "IN { \"command\": \"create\", \"path\": \"docs/press.md\", \"file_text\": \"# Press kit\\n\" } OUT Created docs/press.md"
 - button "Inspect"
 - text: Failed
-- 'button "Write permission denied: c/broken.css"'
-- button "Read docs/guide.md" [expanded]:
+- 'button "Write permission denied: c/broken.css {{duration}}"'
+- button "Read docs/guide.md {{duration}}" [expanded]:
   - text: Read
   - button "docs/guide.md"
+  - text: {{duration}}
 - text: Code block docs/guide.md
 - button "Wrap lines"
 - button "Copy"
@@ -55,7 +56,7 @@
 - button "Expand 4 more lines": … 4 more lines
 - text: guide line 9 guide line 10 guide line 11 guide line 12
 - button "Inspect"
-- button "Grep linkColor" [expanded]
+- button "Grep linkColor {{duration}}" [expanded]
 - text: 9 matches · 3 files
 - button "Copy"
 - button "a/style.css 3" [expanded]
@@ -64,20 +65,20 @@
 - button "src/tokens.css 3" [expanded]
 - text: "3: color: var(--linkColor); 7: color: var(--linkColor); 11: color: var(--linkColor);"
 - button "Inspect"
-- button "Glob **/*.css"
-- button "Bash List the built site"
-- button "Failed Bash Run the lint gate exit code 1" [expanded]
+- button "Glob **/*.css {{duration}}"
+- button "Bash List the built site {{duration}}"
+- button "Failed Bash Run the lint gate exit code 1 {{duration}}" [expanded]
 - text: Failed site pnpm run lint exit code 1
 - button "Copy"
 - text: "style.css: unexpected hex literal"
 - button "Inspect"
-- button "Failed Bash Check every generated stylesheet and component theme against the shared design tokens, inspect the application pages for inconsistent colors, and report all remaining lint failures before publishing the production build exit code 1"
-- button "Failed Bash Build the site no exit code" [expanded]
+- button "Failed Bash Check every generated stylesheet and component theme against the shared design tokens, inspect the application pages for inconsistent colors, and report all remaining lint failures before publishing the production build exit code 1 {{duration}}"
+- button "Failed Bash Build the site no exit code {{duration}}" [expanded]
 - text: Failed site pnpm run build no exit code
 - button "Copy"
 - text: (no output) [timed out after {{duration}}]
 - button "Inspect"
-- button "Search clickable link styles, produced files ui" [expanded]
+- button "Search clickable link styles, produced files ui {{duration}}" [expanded]
 - paragraph:
   - text: Unify links per
   - link "the guide":
@@ -90,15 +91,16 @@
     - text: One cursor token, one focus ring.
   - listitem: Mirror spec (non-http) A non-http source renders inert.
 - button "Inspect"
-- button "Fetch https://docs.example.test/tokens" [expanded]:
+- button "Fetch https://docs.example.test/tokens {{duration}}" [expanded]:
   - text: Fetch
   - link "https://docs.example.test/tokens":
     - /url: https://docs.example.test/tokens
+  - text: {{duration}}
 - link "https://docs.example.test/tokens":
   - /url: https://docs.example.test/tokens
 - text: HTTP 200
 - button "Inspect"
-- button "Tool call design_tokens_sync · design-platform.css" [expanded]
+- button "Tool call design_tokens_sync · design-platform.css {{duration}}" [expanded]
 - text: "IN { \"source\": \"design-platform.css\", \"dryRun\": false } OUT {\"synced\":true,\"tokens\":12}"
 - button "Inspect"
 - heading "Link gallery" [level=2]

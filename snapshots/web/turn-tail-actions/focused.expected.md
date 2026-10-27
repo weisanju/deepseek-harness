@@ -14,7 +14,7 @@
 - button "Analysis completed"
 - paragraph: Reading the workspace now.
 - button "Ran commands" [expanded]
-- button "Bash Print alpha to stdout"
+- button "Bash Print alpha to stdout {{duration}}"
 - paragraph: DONE
 - button "Copy"
 - button "Good response"
