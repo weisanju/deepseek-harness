@@ -14,10 +14,10 @@
 - button "Completed in {{duration}}" [expanded]
 - button "Called tools, ran code, ran commands" [expanded]
 - text: Failed
-- button "Tool call Rejected by Auto review"
-- button "Code Catch an Auto-denied inner call"
+- button "Tool call Rejected by Auto review {{duration}}"
+- button "Code Catch an Auto-denied inner call {{duration}}"
 - text: Failed
-- button "Bash Rejected by Auto review"
+- button "Bash Rejected by Auto review {{duration}}"
 - textbox "Message or run a task, / commands, @ files or sessions"
 - button "Add files or run commands"
 - 'button "Access mode, current: Auto review"': Auto review
@@ -41,12 +41,12 @@
 - button "Completed in {{duration}}" [expanded]
 - button "Called tools, ran code, ran commands" [expanded]
 - text: Failed
-- button "Tool call Rejected by Auto review" [expanded]
+- button "Tool call Rejected by Auto review {{duration}}" [expanded]
 - text: "OUT Tool was not executed. Reason: raw reason"
 - button "Inspect"
-- button "Code Catch an Auto-denied inner call"
+- button "Code Catch an Auto-denied inner call {{duration}}"
 - text: Failed
-- button "Bash Rejected by Auto review" [expanded]
+- button "Bash Rejected by Auto review {{duration}}" [expanded]
 - text: "OUT Tool was not executed. Reason: ptc raw reason"
 - button "Inspect"
 - textbox "Message or run a task, / commands, @ files or sessions"

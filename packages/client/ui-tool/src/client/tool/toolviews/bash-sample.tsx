@@ -20,6 +20,7 @@ import {
 import { formatToolBody, toolRowModel, type ToolRowState } from '../models/tool-call-model.ts'
 import { CONVERSATION_NS as NS } from '../../locale.ts'
 import { ExitCodeBadge } from '../components/ExitCodeBadge.tsx'
+import { ToolDuration, useToolDurationLabel } from '../components/ToolDuration.tsx'
 import css from './bash-sample.module.css'
 
 type BashRowProps = ToolCallViewProps & PropsLocale<'conversation'>
@@ -77,6 +78,9 @@ export const BashRow = memo(function BashRow({ toolName, block, sessionId, useSe
     ? model.errorSummary ?? normalSummary
     : state === 'stopped' ? t('bash.stopped') : null
   const running = state === 'running' || state === 'preparing'
+  // The label ticks only while the command is in flight; a settled call shows
+  // the duration it took, and a call without timing shows nothing.
+  const durationLabel = useToolDurationLabel(model.timing, t)
   const toggleFromKeyboard = useCallback((event: KeyboardEvent<HTMLDivElement>) => {
     if (!expandable || (event.key !== 'Enter' && event.key !== ' ')) return
     event.preventDefault()
@@ -119,6 +123,7 @@ export const BashRow = memo(function BashRow({ toolName, block, sessionId, useSe
             <TextShimmer>{settlementLine ?? normalSummary}</TextShimmer>
           </span>
           {exitLabel !== null && <ExitCodeBadge label={exitLabel} />}
+          {durationLabel !== null && <ToolDuration label={durationLabel} />}
         </TextShimmer>
       </div>
       {open && (

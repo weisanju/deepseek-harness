@@ -14,9 +14,9 @@
 - button "Called tools, ran code, ran commands" [expanded]
 - button "Think The user wants one run_code program that:"
 - text: Failed
-- 'button "Code Error: code run failed (exception): AFTER_PRESENT"'
+- 'button "Code Error: code run failed (exception): AFTER_PRESENT {{duration}}"'
 - button "Present files Delivery failed missing.txt"
-- button "Bash Write DELIVERED_REPORT and DELIVERED_NOTE to files"
+- button "Bash Write DELIVERED_REPORT and DELIVERED_NOTE to files {{duration}}"
 - button "Present files Delivered report.txt, 说明.txt"
 - button "Think The program ran as intended:"
 - paragraph:

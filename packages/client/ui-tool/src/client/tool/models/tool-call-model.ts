@@ -9,6 +9,7 @@ import type { ToolArgs, ToolCallBlock, ToolResultNode } from '@deepseek-ai/dsh-c
 import type { LocaleKeysOf } from '@deepseek-ai/dsh-client-ui-slots'
 import { abbreviateHomePath, isAbsoluteWorkspacePath, relativizeToCwd } from '@deepseek-ai/dsh-util-workspace-path'
 import { recordedAbsolutePath } from './recorded-path.ts'
+import { toolTiming, type ToolTiming } from './tool-duration.ts'
 
 export type { ToolCallBlock } from '@deepseek-ai/dsh-client-ui-chat/client'
 
@@ -159,6 +160,8 @@ export interface ToolRowModel {
   errorSummary: string | null
   /** Structured Auto-review denial identity; null for every ordinary result. */
   autoReviewDenial: AutoReviewDenial | null
+  /** The call's start stamp while it runs and the time it took once settled. */
+  timing: ToolTiming | undefined
   state: ToolRowState
 }
 
@@ -334,6 +337,7 @@ export function toolRowModel(toolName: string, block: ToolCallBlock, cwd?: strin
     output,
     errorSummary,
     autoReviewDenial: deriveAutoReviewDenial(block),
+    timing: toolTiming(block),
     state,
   }
 }

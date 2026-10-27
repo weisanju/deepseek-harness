@@ -12,9 +12,10 @@
 - status: Completed
 - button "Completed in {{duration}}" [expanded]
 - button "Read images" [expanded]
-- button "Read image red.png" [expanded]:
+- button "Read image red.png {{duration}}" [expanded]:
   - text: Read image
   - button "red.png"
+  - text: {{duration}}
 - button "red.png, click to view original":
   - img "red.png"
 - text: {{cwd}}/red.png 1x1px, 69 bytes

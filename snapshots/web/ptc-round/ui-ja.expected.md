@@ -13,14 +13,14 @@
 - button "完了まで {{duration}}" [expanded]
 - button "コードを実行しました、コマンドを実行しました、ファイルを読み取りました" [expanded]
 - 'button "思考 The user wants me to write a single `run_code` program that:"'
-- button "コード Run bash echo and catch missing file read"
-- button "Bash Echo CODE_ROUND_OK" [expanded]
+- button "コード Run bash echo and catch missing file read {{duration}}"
+- button "Bash Echo CODE_ROUND_OK {{duration}}" [expanded]
 - text: 完了 workspace echo CODE_ROUND_OK
 - button "コピー"
 - text: CODE_ROUND_OK
 - button "検査"
 - text: 失敗
-- 'button "読み取り Error: cannot read \"{{cwd}}/workspace/missing.txt\": not found"'
+- 'button "読み取り Error: cannot read \"{{cwd}}/workspace/missing.txt\": not found {{duration}}"'
 - button "思考 The program ran successfully. Let me now reply DONE as instructed."
 - paragraph: DONE
 - button "コピー"

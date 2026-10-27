@@ -1,0 +1,17 @@
+/* Trailing duration label: tabular digits keep the label from jittering while
+   a running call ticks, the caption tier keeps it below the summary in
+   emphasis, and the half-pixel nudge closes the baseline gap the size
+   difference leaves under the row's box-centering (a transform, so flex
+   layout is untouched). */
+
+.duration {
+  flex: none;
+  margin-left: 10px;
+  white-space: nowrap;
+  font-family: var(--ds-font-family-code);
+  font-variant-numeric: tabular-nums;
+  font-size: calc(var(--dsh-content-font-size-secondary, 13px) - 2px);
+  line-height: calc(24px + var(--dsh-content-font-delta, 0px));
+  color: var(--dsw-alias-label-caption);
+  transform: translateY(0.5px);
+}

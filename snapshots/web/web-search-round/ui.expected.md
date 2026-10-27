@@ -12,7 +12,7 @@
 - status: Completed
 - button "Completed in {{duration}}" [expanded]
 - button "Searched the web" [expanded]
-- button "Search DeepSeek Harness snapshot search, DeepSeek Harness multi-query search"
+- button "Search DeepSeek Harness snapshot search, DeepSeek Harness multi-query search {{duration}}"
 - paragraph: SEARCH_DONE
 - button "Copy"
 - button "Good response"

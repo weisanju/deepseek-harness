@@ -16,7 +16,7 @@
 - button "Completed in {{duration}}" [expanded]
 - button "Called tools" [expanded]
 - button "Think I will inspect the current Session's dynamic Cordis Plugins before defining the snapshot Package."
-- button "Inspect plugins 0 dynamic plugins"
+- button "Inspect plugins 0 dynamic plugins {{duration}}"
 - button "Think No dynamic Plugins are present, so I will define the requested Host and Client Package."
 - button "Register Cordis Plugin snapshot noop does nothing, for the snapshot Ready" [expanded]
 - tablist "Plugin source":

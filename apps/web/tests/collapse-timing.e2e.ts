@@ -134,7 +134,9 @@ describe.skipIf(MODE === 'record')('web e2e: recorded collapse timing', () => {
 
     await selectPreference('When to Collapse Work Details', 'On next message')
     await expectProcess(1, true)
-    await page.getByRole('button', { name: 'Read a.txt', exact: true }).waitFor()
+    // The row's accessible name ends with the call's elapsed time, so match
+    // the title prefix rather than the whole name.
+    await page.getByRole('button', { name: /^Read a\.txt/ }).waitFor()
     await capture('next-input.expected.md')
 
     await selectPreference('When to Collapse Work Details', 'On completion')

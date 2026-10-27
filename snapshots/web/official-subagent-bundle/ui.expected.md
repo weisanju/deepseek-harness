@@ -3,8 +3,8 @@
 - status: Completed
 - button "Completed in {{duration}}" [expanded]
 - button "Ran code and coordinated subagents" [expanded]
-- button "Code Delegate through the official Claude bundle"
-- button "Tool call subagent_claude_code · Read the fixture response"
+- button "Code Delegate through the official Claude bundle {{duration}}"
+- button "Tool call subagent_claude_code · Read the fixture response {{duration}}"
 - paragraph: Waiting for the child result.
 - button "Copy"
 - button "Good response"

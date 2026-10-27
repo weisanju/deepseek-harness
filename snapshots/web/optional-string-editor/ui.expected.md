@@ -3,8 +3,8 @@
 - status: Completed
 - button "Completed in {{duration}}" [expanded]
 - button "Ran code and called tools" [expanded]
-- button "Code Create a file with the optional editor"
-- button "Tool call str_replace_editor · create"
+- button "Code Create a file with the optional editor {{duration}}"
+- button "Tool call str_replace_editor · create {{duration}}"
 - paragraph: DONE
 - button "View changes to edited.txt": Edited edited.txt +1 -0
 - button "Copy"

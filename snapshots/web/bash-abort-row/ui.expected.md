@@ -11,10 +11,10 @@
 - status: Stopped
 - button "Stopped" [disabled] [expanded]
 - button "Ran commands" [expanded]
-- 'button "Failed Bash Error: tool call aborted" [expanded]'
+- 'button "Failed Bash Error: tool call aborted {{duration}}" [expanded]'
 - text: "IN { \"command\": \"node -e \\\"const fs=require('node:fs'); fs.writeFileSync('started.tmp', 'started'); fs.renameSync('started.tmp', 'started.txt'); setInterval(() => {}, 1000)\\\"\", \"description\": \"Wait until cancellation\" } OUT Error: tool call aborted"
 - button "Inspect"
-- 'button "Failed Bash Error: tool call aborted before dispatch"'
+- 'button "Failed Bash Error: tool call aborted before dispatch {{duration}}"'
 - textbox "Message or run a task, / commands, @ files or sessions"
 - button "Add files or run commands"
 - 'button "Access mode, current: Full access"': Full access

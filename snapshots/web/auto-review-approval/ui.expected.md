@@ -14,9 +14,9 @@
 - button "Completed in {{duration}}" [expanded]
 - button "Called tools" [expanded]
 - text: Failed
-- 'button "Tool call Error: the user rejected tool \"mystery\""'
+- 'button "Tool call Error: the user rejected tool \"mystery\" {{duration}}"'
 - text: Failed
-- 'button "Tool call Error: Auto review of tool \"mystery\" failed; its body was not executed: auto-review: reviewer ended with error UNKNOWN: provider unavailable"'
+- 'button "Tool call Error: Auto review of tool \"mystery\" failed; its body was not executed: auto-review: reviewer ended with error UNKNOWN: provider unavailable {{duration}}"'
 - textbox "Message or run a task, / commands, @ files or sessions"
 - button "Add files or run commands"
 - 'button "Access mode, current: Auto review"': Auto review
@@ -40,11 +40,11 @@
 - button "Completed in {{duration}}" [expanded]
 - button "Called tools" [expanded]
 - text: Failed
-- 'button "Tool call Error: the user rejected tool \"mystery\"" [expanded]'
+- 'button "Tool call Error: the user rejected tool \"mystery\" {{duration}}" [expanded]'
 - text: "IN { \"target\": \"old-build.log\" } OUT Error: the user rejected tool \"mystery\""
 - button "Inspect"
 - text: Failed
-- 'button "Tool call Error: Auto review of tool \"mystery\" failed; its body was not executed: auto-review: reviewer ended with error UNKNOWN: provider unavailable" [expanded]'
+- 'button "Tool call Error: Auto review of tool \"mystery\" failed; its body was not executed: auto-review: reviewer ended with error UNKNOWN: provider unavailable {{duration}}" [expanded]'
 - text: "IN { \"target\": \"notes.txt\" } OUT Error: Auto review of tool \"mystery\" failed; its body was not executed: auto-review: reviewer ended with error UNKNOWN: provider unavailable"
 - button "Inspect"
 - textbox "Message or run a task, / commands, @ files or sessions"
